@@ -3,8 +3,6 @@
 **Highlight By Line Number** is an Obsidian plugin that lets you easily highlight individual lines in your notes using a simple `%hl-color%` marker syntax.  
 It brings intuitive, colorful highlighting to both Reading and Live Preview modes—with a beautiful palette and instant visual feedback.
 
----
-
 ## ✨ Features
 
 - **Highlight any line** with a color using `%hl-yellow%`, `%hl-blue%`, etc.
@@ -55,9 +53,8 @@ It brings intuitive, colorful highlighting to both Reading and Live Preview mode
 - Purple
 - Gray
 
----
 
-## ⚠️ Known Issues / TODO
+## 🗒 TODO
 
 - [ ] **Highlight in Lists:**  
       Highlight sometimes does **not** apply to lines inside certain Markdown lists.  

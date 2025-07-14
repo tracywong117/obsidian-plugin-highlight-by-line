@@ -1,6 +1,6 @@
-# Highlight By Line Number
+# Highlight By Line
 
-**Highlight By Line Number** is an Obsidian plugin that lets you easily highlight individual lines in your notes using a simple `%hl-color%` marker syntax.  
+**Highlight By Line** is an Obsidian plugin that lets you easily highlight individual lines in your notes using a simple `%hl-color%` marker syntax.  
 It brings intuitive, colorful highlighting to both Reading and Live Preview modes—with a beautiful palette and instant visual feedback.
 
 ## ✨ Features

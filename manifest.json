@@ -1,6 +1,6 @@
 {
     "id": "highlight-by-line",
-    "name": "Highlight by Line",
+    "name": "Highlight By Line",
     "version": "1.0.0",
     "minAppVersion": "0.15.0",
     "description": "Highlights text lines in markdown using designated markers and provides an interactive color palette on line numbers to update those markers.",

@@ -6,3 +6,170 @@ available in the app when your plugin is enabled.
 If your plugin does not need CSS, delete this file.
 
 */
+
+/* Only show for reading or writing mode, never both */
+/* .markdown-reading-view .hl-block-container { 
+    display: block; 
+  }
+  
+  .markdown-reading-view .hl-inline-container { 
+    display: none; 
+  }
+  
+  .markdown-source-view .hl-block-container { 
+    display: none; 
+  }
+  
+  .markdown-source-view .hl-inline-container { 
+    display: block; 
+  }
+  
+  .cm-content .hl-block-container { 
+    display: none; 
+  }
+  
+  .cm-content .hl-inline-container { 
+    display: block; 
+  } */
+  
+  /* Base block styles */
+  /* Highlight block styles */
+.hl-block {
+    border-radius: 0.25em;
+    margin-left: 0em;
+    transition: background 0.2s;
+  }
+  
+  /* Color-specific block styles */
+  .hl-block-yellow { 
+    background: var(--color-yellow-bg, rgb(255, 250, 205)); 
+  }
+  
+  .hl-block-red { 
+    background: var(--color-red-bg, rgb(255, 237, 237)); 
+  }
+  
+  .hl-block-pink { 
+    background: var(--color-pink-bg, rgb(255,235,247)); 
+  }
+  
+  .hl-block-green { 
+    background: var(--color-green-bg, rgb(228,248,236)); 
+  }
+  
+  .hl-block-blue { 
+    background: var(--color-blue-bg, rgb(233, 245, 254)); 
+  }
+  
+  .hl-block-purple { 
+    background: var(--color-purple-bg, rgb(249, 239, 253)); 
+  }
+  
+  .hl-block-gray { 
+    background: var(--color-gray-bg, rgb(241, 242, 244)); 
+  }
+  
+  /* Inline marker styles */
+  .hl-inline-marker {
+    display: inline-block;
+    border-radius: 0.5em;
+    font-size: 0.95em;
+    padding: 0.08em 0.40em;
+    margin: 0 0.1em;
+    font-family: inherit !important;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    vertical-align: baseline;
+    box-shadow: 0 0 0 1px var(--background-modifier-border);
+    user-select: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  
+  /* Palette styles */
+  .hl-palette {
+    display: flex;
+    align-items: center;
+    gap: 0.2em;
+    padding: 0.25em 0.5em;
+    background: var(--background-primary);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 1.5em;
+    box-shadow: var(--shadow-s);
+    z-index: 9999;
+    min-width: 0;
+  }
+  
+  /* Base palette dot styles */
+  .hl-palette-dot {
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 50%;
+    border: 2px solid var(--background-primary);
+    box-shadow: 0 0 0 2px var(--background-modifier-border);
+    cursor: pointer;
+    margin: 0 0.1em;
+    display: inline-block;
+    transition: transform 0.12s, box-shadow 0.12s;
+  }
+  
+  .hl-palette-dot:hover {
+    transform: scale(1.22);
+    box-shadow: 0 0 0 3px var(--interactive-accent);
+  }
+  
+  /* Color-specific palette dot styles */
+  .hl-palette-dot-yellow { 
+    background: #FFD600; 
+  }
+  
+  .hl-palette-dot-red { 
+    background: #FF1744; 
+  }
+  
+  .hl-palette-dot-pink { 
+    background: #F500A3; 
+  }
+  
+  .hl-palette-dot-green { 
+    background: #00C853; 
+  }
+  
+  .hl-palette-dot-blue { 
+    background: #2979FF; 
+  }
+  
+  .hl-palette-dot-purple { 
+    background: #AA00FF; 
+  }
+  
+  .hl-palette-dot-gray { 
+    background: #616161; 
+  }
+  
+  /* Clear button styles */
+  .hl-palette-clear {
+    background: var(--background-primary) !important;
+    color: var(--interactive-accent);
+    font-size: 1.25em;
+    border: 1.5px solid var(--background-modifier-border) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.3em;
+    height: 1.3em;
+    font-weight: bold;
+    box-shadow: none !important;
+  }
+  
+  /* Line number styles */
+  .cm-lineNumbers .cm-gutterElement {
+    cursor: pointer !important;
+    color: var(--interactive-accent) !important;
+    font-weight: bold !important;
+    border-radius: 1em !important;
+    transition: background 0.12s;
+  }
+  
+  .cm-lineNumbers .cm-gutterElement:hover {
+    filter: brightness(0.95);
+  }

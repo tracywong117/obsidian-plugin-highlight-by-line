@@ -56,7 +56,7 @@ It brings intuitive, colorful highlighting to both Reading and Live Preview mode
 
 ## 🗒 TODO
 
-- [ ] **Highlight in Lists:**  
+- [x] **Highlight in Lists:**  
       Highlight sometimes does **not** apply to lines inside certain Markdown lists.  
       _(Planned to be fixed in a future update!)_
 - [ ] **Customization:**  

@@ -40,7 +40,7 @@ If your plugin does not need CSS, delete this file.
     transition: background 0.2s;
   }
   
-  /* Color-specific block styles */
+  /* Color-specific block styles - Light mode */
   .hl-block-yellow { 
     background: var(--color-yellow-bg, rgb(255, 250, 205)); 
   }
@@ -67,6 +67,35 @@ If your plugin does not need CSS, delete this file.
   
   .hl-block-gray { 
     background: var(--color-gray-bg, rgb(241, 242, 244)); 
+  }
+
+  /* Color-specific block styles - Dark mode */
+  .theme-dark .hl-block-yellow { 
+    background: var(--color-yellow-bg, rgba(142, 105, 33, 1)); 
+  }
+  
+  .theme-dark .hl-block-red { 
+    background: var(--color-red-bg, rgba(189, 59, 57, 1)); 
+  }
+  
+  .theme-dark .hl-block-pink { 
+    background: var(--color-pink-bg, rgba(189, 52, 138, 1)); 
+  }
+  
+  .theme-dark .hl-block-green { 
+    background: var(--color-green-bg, rgba(57, 119, 82, 1)); 
+  }
+  
+  .theme-dark .hl-block-blue { 
+    background: var(--color-blue-bg, rgba(41, 107, 213, 1)); 
+  }
+  
+  .theme-dark .hl-block-purple { 
+    background: var(--color-purple-bg, rgba(113, 64, 169, 1)); 
+  }
+  
+  .theme-dark .hl-block-gray { 
+    background: var(--color-gray-bg, rgba(18, 24, 38, 1)); 
   }
   
   /* Inline marker styles */

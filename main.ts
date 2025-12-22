@@ -19,37 +19,58 @@ export default class HighlightByLineNumPlugin extends Plugin {
       return;
     }
 
-    const match = element.textContent.match(HL_REGEX);
-    if (!match) return;
-
-    const fullMarker = match[0]; 
-    const color = match[1].toLowerCase(); 
-
-    // 1. Remove the marker text (%hl-red%) first
-    const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
-    let node: Node | null = null;
-    while ((node = walker.nextNode())) {
-      if (node.nodeValue && node.nodeValue.includes(fullMarker)) {
-        node.nodeValue = node.nodeValue.replace(fullMarker, "");
-        break; 
+    const childNodes = Array.from(element.childNodes);
+    let currentLineNodes: Node[] = [];
+    
+    for (let i = 0; i < childNodes.length; i++) {
+      const node = childNodes[i];
+      if (node.nodeName === "BR") {
+        this.processLine(currentLineNodes, element);
+        currentLineNodes = [];
+      } else {
+        currentLineNodes.push(node);
       }
     }
+    this.processLine(currentLineNodes, element);
+  }
 
-    // 2. Create a wrapper span to hold the content
-    // This ensures the highlight is INLINE (hugging the text) 
-    // instead of BLOCK (filling the width)
-    const wrapper = element.createSpan({
-      cls: `hl-block hl-block-${color}`
-    });
-
-    // 3. Move all original children into the wrapper
-    // We iterate backwards or use a while loop to move nodes safely
-    while (element.firstChild && element.firstChild !== wrapper) {
-      wrapper.appendChild(element.firstChild);
-    }
+  processLine(nodes: Node[], parent: HTMLElement) {
+    let found = false;
+    let color = "";
     
-    // 4. Append the wrapper back to the element
-    element.appendChild(wrapper);
+    const findAndRemove = (node: Node): boolean => {
+        if (node.nodeType === Node.TEXT_NODE && node.nodeValue) {
+            const match = node.nodeValue.match(HL_REGEX);
+            if (match) {
+                color = match[1].toLowerCase();
+                node.nodeValue = node.nodeValue.replace(match[0], "");
+                return true;
+            }
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+            for (let i = 0; i < node.childNodes.length; i++) {
+                if (findAndRemove(node.childNodes[i])) return true;
+            }
+        }
+        return false;
+    };
+
+    for (const node of nodes) {
+        if (findAndRemove(node)) {
+            found = true;
+            break; 
+        }
+    }
+
+    if (!found) return;
+
+    const wrapper = document.createElement("span");
+    wrapper.className = `hl-block hl-block-${color}`;
+
+    if (nodes.length > 0) {
+        const firstNode = nodes[0];
+        parent.insertBefore(wrapper, firstNode);
+        nodes.forEach(node => wrapper.appendChild(node));
+    }
   }
 
   async onAnyClick(evt: MouseEvent) {

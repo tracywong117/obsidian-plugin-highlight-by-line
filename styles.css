@@ -1,119 +1,23 @@
-/*
+.hl-block, .hl-editor-line {
+  border-radius: 0.25em;
+}
 
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
+/* Exclude heading padding from the editor highlight without changing layout. */
+.cm-line.hl-editor-line {
+  background-clip: content-box;
+}
 
-If your plugin does not need CSS, delete this file.
+/* Keep the literal marker visible, selectable, and editable. */
+.cm-line .hl-inline-marker {
+  border-radius: 0.4em;
+  padding: 0.05em 0.3em;
+  border: 1px solid var(--text-muted);
+  background: var(--background-primary);
+  color: var(--text-muted);
+  font-family: var(--font-monospace);
+  font-size: 0.85em;
+}
 
-*/
-
-/* Only show for reading or writing mode, never both */
-/* .markdown-reading-view .hl-block-container { 
-    display: block; 
-  }
-  
-  .markdown-reading-view .hl-inline-container { 
-    display: none; 
-  }
-  
-  .markdown-source-view .hl-block-container { 
-    display: none; 
-  }
-  
-  .markdown-source-view .hl-inline-container { 
-    display: block; 
-  }
-  
-  .cm-content .hl-block-container { 
-    display: none; 
-  }
-  
-  .cm-content .hl-inline-container { 
-    display: block; 
-  } */
-  
-  /* Base block styles */
-  /* Highlight block styles */
-.hl-block {
-    border-radius: 0.25em;
-    margin-left: 0em;
-    transition: background 0.2s;
-  }
-  
-  /* Color-specific block styles - Light mode */
-  .hl-block-yellow { 
-    background: var(--color-yellow-bg, rgb(255, 250, 205)); 
-  }
-  
-  .hl-block-red { 
-    background: var(--color-red-bg, rgb(255, 237, 237)); 
-  }
-  
-  .hl-block-pink { 
-    background: var(--color-pink-bg, rgb(255,235,247)); 
-  }
-  
-  .hl-block-green { 
-    background: var(--color-green-bg, rgb(228,248,236)); 
-  }
-  
-  .hl-block-blue { 
-    background: var(--color-blue-bg, rgb(233, 245, 254)); 
-  }
-  
-  .hl-block-purple { 
-    background: var(--color-purple-bg, rgb(249, 239, 253)); 
-  }
-  
-  .hl-block-gray { 
-    background: var(--color-gray-bg, rgb(241, 242, 244)); 
-  }
-
-  /* Color-specific block styles - Dark mode */
-  .theme-dark .hl-block-yellow { 
-    background: var(--color-yellow-bg, rgba(142, 105, 33, 1)); 
-  }
-  
-  .theme-dark .hl-block-red { 
-    background: var(--color-red-bg, rgba(189, 59, 57, 1)); 
-  }
-  
-  .theme-dark .hl-block-pink { 
-    background: var(--color-pink-bg, rgba(189, 52, 138, 1)); 
-  }
-  
-  .theme-dark .hl-block-green { 
-    background: var(--color-green-bg, rgba(57, 119, 82, 1)); 
-  }
-  
-  .theme-dark .hl-block-blue { 
-    background: var(--color-blue-bg, rgba(41, 107, 213, 1)); 
-  }
-  
-  .theme-dark .hl-block-purple { 
-    background: var(--color-purple-bg, rgba(113, 64, 169, 1)); 
-  }
-  
-  .theme-dark .hl-block-gray { 
-    background: var(--color-gray-bg, rgba(18, 24, 38, 1)); 
-  }
-  
-  /* Inline marker styles */
-  .hl-inline-marker {
-    display: inline-block;
-    border-radius: 0.5em;
-    font-size: 0.95em;
-    padding: 0.08em 0.40em;
-    margin: 0 0.1em;
-    font-family: inherit !important;
-    font-weight: 400;
-    letter-spacing: 0.03em;
-    vertical-align: baseline;
-    box-shadow: 0 0 0 1px var(--background-modifier-border);
-    user-select: none;
-    transition: background 0.2s, color 0.2s;
-  }
-  
   /* Palette styles */
   .hl-palette {
     display: flex;
@@ -146,6 +50,14 @@ If your plugin does not need CSS, delete this file.
     box-shadow: 0 0 0 3px var(--interactive-accent);
   }
   
+.hl-block-yellow { background-color: var(--hl-line-yellow); }
+.hl-block-red { background-color: var(--hl-line-red); }
+.hl-block-pink { background-color: var(--hl-line-pink); }
+.hl-block-green { background-color: var(--hl-line-green); }
+.hl-block-blue { background-color: var(--hl-line-blue); }
+.hl-block-purple { background-color: var(--hl-line-purple); }
+.hl-block-gray { background-color: var(--hl-line-gray); }
+
   /* Color-specific palette dot styles */
   .hl-palette-dot-yellow { 
     background: #FFD600; 
